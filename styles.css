@@ -1,0 +1,60 @@
+:root {
+    --menu-bar-width: 200px;
+    --menu-bar-height: 20px;
+}
+
+body {
+    background: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.menu-btn-burger {
+    background-color: #D84282;
+    position: relative;
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    transition: width 2s ease-in-out;
+}
+
+.menu-btn-burger::before,
+.menu-btn-burger::after {
+    background-color: #D84282;
+    display: block;
+    content: "";
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    position: absolute;
+    left: 0;
+}
+
+.menu-btn-burger::before {
+    top: -40px;
+}
+
+.menu-btn-burger::after {
+    top: 40px;
+}
+
+.menu-btn {
+    width: var(--menu-bar-width);
+    padding: 50px 0;
+}
+
+.menu-btn:hover .menu-btn-burger {
+    background-color: transparent;
+}
+
+.menu-btn:hover .menu-btn-burger::before {
+    transform: rotate(45deg);
+    transition: ease-in-out .5s;
+    top: 0;
+}
+
+.menu-btn:hover .menu-btn-burger::after {
+    transform: rotate(-45deg);
+    transition: ease-in-out .5s;
+    top: 0;
+}
